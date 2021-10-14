@@ -25,7 +25,12 @@
     <p style="color:blue;">"Click on the squares to search for wild life”</p>
     <p id = "tries" style="color:rgb(214, 144, 39)">“Number of tries is zero.” </p>
     <p id = "distance" style="color: rgb(6, 47, 48);"> “Distance is unknown.” </p>
-    
+
+    <div style="text-align:center; width:100%; height:100%;">
+        <button type="button" class="btn btn-primary" onclick="newGame()">New game</button>
+        <br><br>
+      </div>
+
     <div class="container">    
         <div class="row">
             <div class="col-sm-2"><img id="image-0" src="tree.jpg" height="200px" width="200px" onclick="check(0)"></div>
@@ -98,6 +103,18 @@
                 }
             }
         }
+
+       function newGame(){                          //Bonus
+            triesCount = 0
+            animalLocation = Math.floor(Math.random()*23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for(var i=0; i<24; i++){
+                if(ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "animal.jpg"
+                else
+                    document.getElementById(ids[i]).src = "tree.jpg"
+            }
+    }
     </script>
 
 </body>
